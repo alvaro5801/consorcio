@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConsórcioPro - Gestão de Clientes</title>
-    
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons (Standalone version) -->
+
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <!-- Custom Stylesheet -->
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-100">
 
-    <!-- =========== TELA DE LOGIN =========== -->
     <div id="screen-login" class="screen flex min-h-screen flex-col items-center justify-center bg-gray-50 p-4">
         <div class="w-full max-w-md">
             <div class="text-center mb-8">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-primary lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-primary lucide lucide-shield-check">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
                 <h1 class="mt-4 text-3xl font-bold text-gray-800">ConsórcioPro</h1>
                 <p class="text-gray-500">Acesse sua conta de consultor</p>
             </div>
-            
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <form id="login-form">
                     <div class="mb-4">
-                        <label for="consultant-id" class="block text-sm font-medium text-gray-700 mb-1">ID do Consultor</label>
+                        <label for="consultant-id" class="block text-sm font-medium text-gray-700 mb-1">ID do
+                            Consultor</label>
                         <input type="text" id="consultant-id" value="CON123" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" required>
                     </div>
                     <div class="mb-6">
@@ -50,17 +50,18 @@
             </div>
         </div>
         <footer class="absolute bottom-4 text-center text-gray-500 text-xs">
-            <p>&copy; 2024 ConsórcioPro. Todos os direitos reservados. | Versão 1.1.0</p>
+            <p>&copy; 2024 ConsórcioPro. Todos os direitos reservados. | Versão 1.5.0</p>
         </footer>
     </div>
 
-    <!-- =========== ESTRUTURA PRINCIPAL (PÓS-LOGIN) =========== -->
     <div id="screen-main" class="screen">
-        <div class="flex h-screen bg-gray-100">
-            <!-- Menu Lateral Fixo -->
+        <div class="flex min-h-screen bg-gray-100">
             <aside class="w-20 md:w-64 bg-white shadow-md flex-col hidden sm:flex">
                 <div class="h-20 flex items-center justify-center border-b">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary lucide lucide-shield-check">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                        <path d="m9 12 2 2 4-4" />
+                    </svg>
                     <span class="text-xl font-bold text-gray-800 ml-3 hidden md:inline">ConsórcioPro</span>
                 </div>
                 <nav class="flex-1 px-4 py-6 space-y-2">
@@ -78,30 +79,24 @@
                     </a>
                 </nav>
             </aside>
-
-            <!-- Conteúdo Principal -->
-            <main class="flex-1 flex flex-col overflow-hidden">
-                <!-- Cabeçalho -->
+            <main class="flex-1 flex flex-col">
                 <header class="h-20 bg-white border-b flex items-center justify-between px-6">
                     <div id="header-title" class="text-2xl font-semibold text-gray-800">Dashboard</div>
                     <div class="flex items-center space-x-4">
-                        <span id="consultant-name" class="font-medium text-gray-700 hidden md:block">Carlos Silva</span>
+                        <span id="consultant-name" class="font-medium text-gray-700 hidden md:block">Carlos
+                            Silva</span>
                         <img id="consultant-photo" src="https://i.pravatar.cc/150?u=carlos" alt="Foto do Consultor" class="w-10 h-10 rounded-full object-cover">
                         <button id="logout-button" title="Sair" class="p-2 rounded-full text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition-colors">
                             <i data-lucide="log-out" class="w-5 h-5"></i>
                         </button>
                     </div>
                 </header>
-
-                <!-- Área de conteúdo dinâmico -->
-                <div id="main-content" class="flex-1 p-6 overflow-y-auto">
-                    <!-- Conteúdo das telas (Dashboard, Clientes, etc.) será injetado aqui -->
+                <div id="main-content" class="flex-1 p-4 md:p-6">
                 </div>
             </main>
         </div>
     </div>
-    
-    <!-- TEMPLATES DAS SUB-TELAS -->
+
     <template id="template-dashboard">
         <div id="content-dashboard">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,7 +130,7 @@
             </div>
         </div>
     </template>
-    
+
     <template id="template-clients">
         <div id="content-clients">
             <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -144,13 +139,17 @@
                         <input type="text" id="search-client" placeholder="Buscar cliente por nome..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ring-primary">
                         <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <select id="filter-status" class="border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 ring-primary">
+                    <div class="flex items-center gap-4 w-full md:w-auto">
+                        <select id="filter-status" class="border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 ring-primary w-full md:w-auto">
                             <option value="all">Todos os Status</option>
                             <option value="ativo">Ativo</option>
                             <option value="inativo">Inativo</option>
                             <option value="aguardando">Aguardando</option>
                         </select>
+                        <button data-action="add-new-client" class="flex-shrink-0 bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-colors flex items-center gap-2 w-full md:w-auto justify-center">
+                            <i data-lucide="user-plus" class="w-5 h-5"></i>
+                            <span>Novo Cliente</span>
+                        </button>
                     </div>
                 </div>
                 <div class="overflow-x-auto">
@@ -166,7 +165,7 @@
                         <tbody id="client-list-body">
                         </tbody>
                     </table>
-                     <div id="no-clients-message" class="text-center py-10 text-gray-500 hidden">
+                    <div id="no-clients-message" class="text-center py-10 text-gray-500 hidden">
                         <i data-lucide="user-x" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
                         <p>Nenhum cliente encontrado.</p>
                     </div>
@@ -174,49 +173,86 @@
             </div>
         </div>
     </template>
-    
+
     <template id="template-client-details">
-        <div id="content-client-details">
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b pb-6">
-                    <div>
-                        <h2 id="detail-client-name" class="text-3xl font-bold text-gray-800"></h2>
-                        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-2 text-gray-600">
-                            <span class="flex items-center"><i data-lucide="credit-card" class="w-4 h-4 mr-2"></i><span id="detail-client-cpf"></span></span>
-                            <span class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2"></i><span id="detail-client-phone"></span></span>
-                            <span class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2"></i><span id="detail-client-email"></span></span>
-                        </div>
-                        <div id="detail-client-consortiums" class="mt-4 flex flex-wrap gap-2">
+        <div class="p-4 md:p-6 w-full">
+            <div class="flex items-center gap-3 mb-6">
+                <button data-action="back-to-clients" class="p-2 rounded-md hover:bg-gray-200 text-gray-600">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                </button>
+                <h2 class="text-2xl font-bold text-gray-800">Detalhes do Cliente</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-sm h-fit">
+                    <div class="border-b pb-4 mb-4">
+                        <h3 id="detail-client-name" class="text-2xl font-bold text-gray-900"></h3>
+                        <div id="detail-client-status-container" class="mt-2">
                         </div>
                     </div>
-                    <div class="mt-4 md:mt-0 flex-shrink-0">
-                         <button data-action="new-report" class="bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-colors flex items-center">
-                            <i data-lucide="plus" class="w-5 h-5 mr-2"></i>Criar Novo Relatório
-                        </button>
+
+                    <h4 class="text-sm font-semibold text-gray-500 uppercase mb-4">
+                        Dados de Contato
+                    </h4>
+                    <div class="space-y-3 text-gray-700">
+                        <div class="flex items-start">
+                            <i data-lucide="credit-card" class="w-4 h-4 mr-3 mt-1 text-gray-400"></i>
+                            <span id="detail-client-cpf" class="break-all"></span>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="mail" class="w-4 h-4 mr-3 mt-1 text-gray-400"></i>
+                            <span id="detail-client-email" class="break-all"></span>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="phone" class="w-4 h-4 mr-3 mt-1 text-gray-400"></i>
+                            <span id="detail-client-phone" class="break-all"></span>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-3 mt-1 text-gray-400"></i>
+                            <span id="detail-client-address" class="break-all"></span>
+                        </div>
                     </div>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-700 mb-4">Relatórios</h3>
-                <div id="client-reports-list" class="space-y-4">
+
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Atividade do Cliente</h3>
+                                <div id="detail-client-consortiums" class="mt-2 flex flex-wrap gap-2">
+                                </div>
+                            </div>
+                            <button data-action="new-report-from-list" class="bg-primary mt-4 md:mt-0 text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-colors flex items-center gap-2 w-full md:w-auto justify-center">
+                                <i data-lucide="plus" class="w-5 h-5"></i>Criar Novo Relatório
+                            </button>
+                        </div>
+
+                        <h4 class="text-lg font-semibold text-gray-700 mt-6 mb-4 border-t pt-4">Relatórios Criados</h4>
+                        <div id="client-reports-list" class="space-y-4">
+                        </div>
+                        <div id="no-reports-message" class="text-center py-10 text-gray-500 hidden">
+                            <i data-lucide="file-x-2" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                            <p>Nenhum relatório criado para este cliente.</p>
+                        </div>
+                    </div>
                 </div>
-                <div id="no-reports-message" class="text-center py-10 text-gray-500 hidden">
-                    <i data-lucide="file-x-2" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
-                    <p>Nenhum relatório criado para este cliente.</p>
-                </div>
+
             </div>
         </div>
     </template>
 
     <template id="template-report-details">
         <div id="content-report-details">
-            <div class="flex justify-between items-center mb-6">
-                <button data-action="back-to-client" class="text-primary font-semibold hover:underline flex items-center">
-                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>Voltar para o Cliente
-                </button>
-                <button class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors flex items-center">
-                    <i data-lucide="download" class="w-5 h-5 mr-2"></i>Exportar PDF
-                </button>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center mb-6">
+                    <button data-action="back-to-client" class="text-primary font-semibold hover:underline flex items-center">
+                        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>Voltar para o Cliente
+                    </button>
+                    <button class="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors flex items-center">
+                        <i data-lucide="download" class="w-5 h-5 mr-2"></i>Exportar PDF
+                    </button>
+                </div>
                 <div class="border-b pb-6 mb-6">
                     <h2 class="text-2xl font-bold text-gray-800">Relatório de Consórcio</h2>
                     <p class="text-gray-500">Detalhes e projeções da carta de crédito</p>
@@ -238,7 +274,7 @@
                         </div>
                     </div>
                     <div class="space-y-4">
-                         <h3 class="font-semibold text-lg border-b pb-2 mb-2">Taxas e Seguros</h3>
+                        <h3 class="font-semibold text-lg border-b pb-2 mb-2">Taxas e Seguros</h3>
                         <div>
                             <p class="text-sm text-gray-500">Taxa de Administração</p>
                             <p id="report-admin-fee" class="font-medium text-lg text-gray-800"></p>
@@ -265,21 +301,25 @@
                     </div>
                 </div>
                 <div class="mt-10">
-                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Comparativo: Consórcio vs. Financiamento (Simulação)</h3>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Comparativo: Consórcio vs. Financiamento
+                        (Simulação)</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="border p-4 rounded-lg flex flex-col">
                             <h4 class="font-bold text-lg text-center">Consórcio</h4>
-                            <p class="text-center text-gray-500 text-sm mb-4">Custo Efetivo Total (CET) baseado nas taxas.</p>
+                            <p class="text-center text-gray-500 text-sm mb-4">Custo Efetivo Total (CET) baseado nas
+                                taxas.</p>
                             <div class="text-center mt-auto">
-                                <span class="text-3xl font-bold text-green-600" id="compare-consorcio-total">R$ 0,00</span>
+                                <span class="text-3xl font-bold text-green-600" id="compare-consorcio-total">R$
+                                    0,00</span>
                                 <p class="text-gray-600">Custo Total</p>
                             </div>
                         </div>
                         <div class="border p-4 rounded-lg flex flex-col">
                             <h4 class="font-bold text-lg text-center">Financiamento (Estimado)</h4>
-                             <p class="text-center text-gray-500 text-sm mb-4">Estimativa com juros de 12% a.a.</p>
+                            <p class="text-center text-gray-500 text-sm mb-4">Estimativa com juros de 12% a.a.</p>
                             <div class="text-center mt-auto">
-                                <span class="text-3xl font-bold text-red-600" id="compare-financiamento-total">R$ 0,00</span>
+                                <span class="text-3xl font-bold text-red-600" id="compare-financiamento-total">R$
+                                    0,00</span>
                                 <p class="text-gray-600">Custo Total</p>
                             </div>
                         </div>
@@ -291,90 +331,233 @@
 
     <template id="template-new-report">
         <div id="content-new-report">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <div class="flex justify-between items-center border-b pb-6 mb-8">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-800">Criar Novo Relatório</h2>
-                            <p id="new-report-client-name" class="text-gray-500"></p>
-                        </div>
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="flex justify-between items-center border-b pb-6 mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Criar Novo Relatório</h2>
+                        <p id="new-report-client-name" class="text-gray-500"></p>
                     </div>
-                    <form id="new-report-form" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="new-report-type" class="block text-sm font-medium text-gray-700">Tipo de Consórcio</label>
-                                <select id="new-report-type" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary">
-                                    <option>Imóvel</option>
-                                    <option>Automóvel</option>
-                                    <option>Serviço</option>
-                                    <option>Outro</option>
-                                </select>
+                </div>
+
+                <form id="new-report-form" class="space-y-6">
+                    <div>
+                        <label for="new-report-type" class="block text-sm font-medium text-gray-700">Tipo de Consórcio</label>
+                        <select id="new-report-type" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary">
+                            <option>Imóvel</option>
+                            <option>Automóvel</option>
+                            <option>Serviço</option>
+                        </select>
+                    </div>
+
+                    <div id="dynamic-form-fields" class="space-y-6">
+
+                        <div id="form-fields-imovel">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="imovel-credit" class="block text-sm font-medium text-gray-700">Valor da Carta de Crédito (R$)</label>
+                                    <input type="number" id="imovel-credit" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="300000">
+                                </div>
+                                <div>
+                                    <label for="imovel-correction-rate" class="block text-sm font-medium text-gray-700">Correção Monetária Anual (%)</label>
+                                    <input type="number" step="0.1" id="imovel-correction-rate" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="Ex: 7.5 (IPCA/INCC)">
+                                </div>
                             </div>
-                             <div>
-                                <label for="new-report-credit" class="block text-sm font-medium text-gray-700">Valor da Carta de Crédito (R$)</label>
-                                <input type="number" id="new-report-credit" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="80000">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                <div>
+                                    <label for="imovel-admin-fee" class="block text-sm font-medium text-gray-700">Taxa de Admin. (%)</label>
+                                    <input type="number" step="0.1" id="imovel-admin-fee" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="18.0">
+                                </div>
+                                <div>
+                                    <label for="imovel-reserve-fund" class="block text-sm font-medium text-gray-700">Fundo de Reserva (%)</label>
+                                    <input type="number" step="0.1" id="imovel-reserve-fund" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="2.0">
+                                </div>
+                                <div>
+                                    <label for="imovel-insurance" class="block text-sm font-medium text-gray-700">Seguro de Vida (% - opcional)</label>
+                                    <input type="number" step="0.1" id="imovel-insurance" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="0.5">
+                                </div>
                             </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                             <div>
-                                <label for="new-report-term" class="block text-sm font-medium text-gray-700">Prazo (meses)</label>
-                                <input type="number" id="new-report-term" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="72">
-                            </div>
-                            <div>
-                                <label for="new-report-admin-fee" class="block text-sm font-medium text-gray-700">Taxa de Admin. (%)</label>
-                                <input type="number" step="0.1" id="new-report-admin-fee" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="15.0">
-                            </div>
-                             <div>
-                                <label for="new-report-reserve-fund" class="block text-sm font-medium text-gray-700">Fundo de Reserva (%)</label>
-                                <input type="number" step="0.1" id="new-report-reserve-fund" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="1.0">
-                            </div>
-                        </div>
-                         <div>
-                            <label for="new-report-insurance" class="block text-sm font-medium text-gray-700">Seguro (%) (opcional)</label>
-                            <input type="number" step="0.1" id="new-report-insurance" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="0.3">
-                        </div>
-                        
-                        <!-- Seção de resultados -->
-                        <div id="calculation-result" class="hidden pt-6 mt-6 border-t">
-                             <h3 class="text-lg font-semibold text-gray-700 mb-4">Resultado da Simulação</h3>
-                             <div class="grid grid-cols-2 gap-6 bg-gray-50 p-4 rounded-lg">
-                                 <div>
-                                     <p class="text-sm text-gray-500">Valor da Parcela Mensal</p>
-                                     <p id="result-installment" class="font-bold text-2xl text-primary"></p>
-                                 </div>
-                                 <div>
-                                     <p class="text-sm text-gray-500">Total Pago ao Final</p>
-                                     <p id="result-total-paid" class="font-medium text-lg text-gray-800"></p>
-                                 </div>
-                             </div>
                         </div>
 
-                        <div class="flex justify-end gap-4 pt-4 border-t mt-0">
-                            <button type="button" data-action="cancel-new-report" class="bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors">Cancelar</button>
-                            <button type="button" data-action="calculate-report" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
-                                <i data-lucide="calculator" class="w-5 h-5 mr-2"></i>Calcular
-                            </button>
-                            <button type="submit" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center">
-                                <i data-lucide="save" class="w-5 h-5 mr-2"></i>Salvar Relatório
-                            </button>
+                        <div id="form-fields-automovel" class="hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="auto-credit" class="block text-sm font-medium text-gray-700">Valor da Carta de Crédito (R$)</label>
+                                    <input type="number" id="auto-credit" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="80000">
+                                </div>
+                                <div>
+                                    <label for="auto-down-payment" class="block text-sm font-medium text-gray-700">Valor estimado de entrada (R$ - opcional)</label>
+                                    <input type="number" id="auto-down-payment" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="10000">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                <div>
+                                    <label for="auto-admin-fee" class="block text-sm font-medium text-gray-700">Taxa de Admin. (%)</label>
+                                    <input type="number" step="0.1" id="auto-admin-fee" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="15.0">
+                                </div>
+                                <div>
+                                    <label for="auto-reserve-fund" class="block text-sm font-medium text-gray-700">Fundo de Reserva (%)</label>
+                                    <input type="number" step="0.1" id="auto-reserve-fund" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="1.0">
+                                </div>
+                                <div>
+                                    <label for="auto-insurance" class="block text-sm font-medium text-gray-700">Seguro (%) (opcional)</label>
+                                    <input type="number" step="0.1" id="auto-insurance" class="dynamic-field mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="0.3">
+                                </div>
+                            </div>
                         </div>
-                    </form>
+
+                        <div id="form-fields-servico" class="hidden">
+                        </div>
+
+                    </div>
+
+                    <div id="calculation-result" class="hidden pt-6 mt-6 border-t">
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Resultado da Simulação</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-gray-50 p-4 rounded-lg">
+                            <div>
+                                <p class="text-sm text-gray-500">Valor da Parcela Mensal</p>
+                                <p id="result-installment" class="font-bold text-2xl text-primary"></p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Total Pago ao Final</p>
+                                <p id="result-total-paid" class="font-medium text-lg text-gray-800"></p>
+                            </div>
+                            <div id="corrected-credit-container" class="hidden">
+                                <p class="text-sm text-gray-500">Carta Corrigida (est. 1º ano)</p>
+                                <p id="result-corrected-credit" class="font-medium text-lg text-gray-800"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end gap-4 pt-4 border-t mt-0">
+                        <button type="button" data-action="cancel-new-report" class="bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors">Cancelar</button>
+                        <button type="button" data-action="calculate-report" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                            <i data-lucide="calculator" class="w-5 h-5 mr-2"></i>Calcular
+                        </button>
+                        <button type="submit" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center">
+                            <i data-lucide="save" class="w-5 h-5 mr-2"></i>Salvar Relatório
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <template id="template-new-client">
+        <div id="content-new-client">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <div class="border-b pb-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800">Adicionar Novo Cliente</h2>
+                    <p class="text-gray-500">Preencha os dados abaixo para cadastrar um novo cliente.</p>
+                </div>
+                <form id="new-client-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="new-client-name" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                            <input type="text" id="new-client-name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="Ex: João da Silva" required>
+                        </div>
+                        <div>
+                            <label for="new-client-cpf" class="block text-sm font-medium text-gray-700">CPF</label>
+                            <input type="text" id="new-client-cpf" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="000.000.000-00" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="new-client-phone" class="block text-sm font-medium text-gray-700">Telefone</label>
+                            <input type="tel" id="new-client-phone" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="(00) 90000-0000" required>
+                        </div>
+                        <div>
+                            <label for="new-client-email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                            <input type="email" id="new-client-email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="joao.silva@example.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="new-client-address" class="block text-sm font-medium text-gray-700">Endereço</label>
+                        <input type="text" id="new-client-address" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-primary" placeholder="Rua das Flores, 123, Bairro, Cidade - UF">
+                    </div>
+
+                    <div class="flex justify-end gap-4 pt-6 border-t mt-4">
+                        <button type="button" data-action="back-to-clients" class="bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors">Cancelar</button>
+                        <button type="submit" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors flex items-center">
+                            <i data-lucide="save" class="w-5 h-5 mr-2"></i>Salvar Cliente
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <template id="template-settings">
+        <div id="content-settings">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-800 border-b pb-6 mb-6">Configurações</h2>
+                <p class="text-gray-600">Esta página de configurações é um placeholder para futuras funcionalidades.
+                </p>
+            </div>
+        </div>
+    </template>
+
+    <template id="template-edit-client">
+        <div class="p-8 w-full max-w-4xl mx-auto">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <button data-action="back-to-clients" class="p-2 rounded-md hover:bg-gray-100">
+                        <i data-lucide="arrow-left" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                    <div>
+                        <h2 id="header-title" class="text-2xl font-bold text-gray-800">
+                            Editar Cliente
+                        </h2>
+                        <p id="edit-client-id-display" class="text-sm text-gray-500">
+                            Carregando...
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </template>
-    
-    <template id="template-settings">
-        <div id="content-settings" class="max-w-4xl mx-auto">
-             <div class="bg-white p-8 rounded-lg shadow-sm">
-                <h2 class="text-2xl font-bold text-gray-800 border-b pb-6 mb-6">Configurações</h2>
-                <p class="text-gray-600">Esta página de configurações é um placeholder para futuras funcionalidades.</p>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <form id="edit-client-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="edit-client-name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                            <input type="text" id="edit-client-name" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+                        </div>
+
+                        <div>
+                            <label for="edit-client-cpf" class="block text-sm font-medium text-gray-700 mb-1">CPF</label>
+                            <input type="text" id="edit-client-cpf" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+                        </div>
+
+                        <div>
+                            <label for="edit-client-phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
+                            <input type="tel" id="edit-client-phone" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+                        </div>
+
+                        <div>
+                            <label for="edit-client-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="edit-client-email" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label for="edit-client-address" class="block text-sm font-medium text-gray-700 mb-1">Endereço</label>
+                            <input type="text" id="edit-client-address" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end gap-4 mt-8">
+                        <button type="button" data-action="back-to-clients" class="px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="px-4 py-2 bg-primary text-white font-semibold rounded-md hover:bg-opacity-90">
+                            Salvar Alterações
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </template>
-    
-    <!-- Custom Script -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
